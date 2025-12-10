@@ -16,6 +16,10 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Install TinyTeX
+        uses: quarto-dev/quarto-actions/setup-tinytex@v1
+
+
       # Si vous utilisez R, décommentez les lignes suivantes
       # - name: Set up R
       #   uses: r-lib/actions/setup-r@v2
