@@ -2,8 +2,5 @@
 
 Ceci est une introduction à votre livre.
 
-Vous pouvez inclure du code exécutable comme ceci :
+Vous pouvez inclure du code exécutable.
 
-```{r}
-1 + 1
-```
