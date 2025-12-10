@@ -1,0 +1,32 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mon Livre Skridou",
+    "section": "",
+    "text": "Préface\nBienvenue dans ce livre écrit avec Quarto.\nPour en savoir plus sur les livres Quarto, visitez https://quarto.org/docs/books.",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Ceci est une introduction à votre livre.\nVous pouvez inclure du code exécutable.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Résumé",
+    "section": "",
+    "text": "En résumé, ce livre ne contient pas encore grand-chose.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Résumé</span>"
+    ]
+  }
+]
