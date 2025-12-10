@@ -1,0 +1,9 @@
+# Introduction
+
+Ceci est une introduction à votre livre.
+
+Vous pouvez inclure du code exécutable comme ceci :
+
+```{r}
+1 + 1
+```
