@@ -17,7 +17,8 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Install TinyTeX
-        uses: quarto-dev/quarto-actions/setup-tinytex@v1
+        run: quarto install tinytex
+
 
 
       # Si vous utilisez R, décommentez les lignes suivantes
