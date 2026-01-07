@@ -1,5 +1,3 @@
 # Préface {.unnumbered}
 
-Bienvenue dans ce livre écrit avec Quarto.
-
-Pour en savoir plus sur les livres Quarto, visitez <https://quarto.org/docs/books>.
+Quelques notes de travail.
