@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Mon Livre Skridou",
+    "title": "Notes",
     "section": "",
-    "text": "Préface\nBienvenue dans ce livre écrit avec Quarto.\nPour en savoir plus sur les livres Quarto, visitez https://quarto.org/docs/books.",
+    "text": "Préface\nQuelques notes de travail.",
     "crumbs": [
       "Préface"
     ]
@@ -14,7 +14,7 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "Ceci est une introduction à votre livre.\nVous pouvez inclure du code exécutable.",
+    "text": "Intro.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -27,6 +27,16 @@
     "text": "En résumé, ce livre ne contient pas encore grand-chose.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Résumé</span>"
+    ]
+  },
+  {
+    "objectID": "sysdyn.html",
+    "href": "sysdyn.html",
+    "title": "3  Systèmes dynamiques",
+    "section": "",
+    "text": "Un système dynamique est une formalisation mathématique permettant de décrire l’évolution de l’état d’un système dans le temps. Les trois composantes fondamentales sont :\n\n\\(X\\) : l’espace d’états, c’est-à-dire l’ensemble de tous les états possibles du système (également appelé espace de phase),\n\\(T\\) : l’ensemble de temps,\n\\(\\phi_t\\) : l’opérateur d’évolution (appelé flot pour les systèmes à temps continu) qui transforme un état initial \\(x_0\\) en l’état \\(x_t\\) à l’instant \\(t\\).\n\nSi l’opérateur d’évolution ne dépend que du temps, on peut écrire : \\[\n\\dot{x}_t = f(t, x_t)\n\\] qui est une équation différentielle ordinaire (EDO) du premier ordre. L’EDO définit la trajectoire d’un point dans un espace d’états de dimension finie.\nDans le cas où la fonction inconnue dépend de plusieurs variables (comme le temps et les coordonnées spatiales), on parlera d’équation différentielle partielle (EDP). C’est le cas lorsque l’on souhaite modéliser un système qui varie à la fois dans le temps et dans l’espace. L’état du système \\(x(t)\\) est alors une fonction définie sur le domaine spatial. L’ensemble de toutes les fonctions possibles est appelé espace fonctionnel. Une EDP décrit alors l’évolution d’un système dynamique en dimension infinie.\nTransport optimal : la carte de transport optimal est le gradient d’une fonction convexe.\nDescente de gradient : EDO et flot de gradient.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Systèmes dynamiques</span>"
     ]
   }
 ]
