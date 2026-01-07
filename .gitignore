@@ -4,3 +4,5 @@
 *.Rproj
 *.RData
 *.Rhistory
+
+**/*.quarto_ipynb
