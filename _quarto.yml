@@ -3,13 +3,14 @@ project:
   output-dir: _book
 
 book:
-  title: "Mon Livre Skridou"
-  author: "Auteur"
+  title: "Notes"
+  author: "François Rousseau"
   date: "10/12/2025"
   chapters:
     - index.qmd
     - intro.qmd
     - summary.qmd
+    - sysdyn.qmd
     - references.qmd
 
 bibliography: references.bib
