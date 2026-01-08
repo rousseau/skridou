@@ -103,7 +103,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -176,7 +176,7 @@ window.Quarto = {
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -205,10 +205,12 @@ window.Quarto = {
 </ol>
 <p>Si l’opérateur d’évolution ne dépend que du temps, on peut écrire : <span class="math display">\[
 \dot{x}_t = f(t, x_t)
-\]</span> qui est une équation différentielle ordinaire (EDO) du premier ordre. L’EDO définit la trajectoire d’un point dans un espace d’états de dimension finie.</p>
-<p>Dans le cas où la fonction inconnue dépend de plusieurs variables (comme le temps et les coordonnées spatiales), on parlera d’équation différentielle partielle (EDP). C’est le cas lorsque l’on souhaite modéliser un système qui varie à la fois dans le temps et dans l’espace. L’état du système <span class="math inline">\(x(t)\)</span> est alors une fonction définie sur le domaine spatial. L’ensemble de toutes les fonctions possibles est appelé espace fonctionnel. Une EDP décrit alors l’évolution d’un système dynamique en dimension infinie.</p>
+\]</span> qui est une équation différentielle<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> ordinaire (EDO) du premier ordre. L’EDO définit la trajectoire d’un point dans un espace d’états de dimension finie.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Les équations différentielles apparaissent avec l’invention du calcul infinitésimal par Isaac Newton et Gottfried Leibniz.</p></div></div><p>Habituellement, on considère que la fonction <span class="math inline">\(f\)</span>, appelée champ de vecteurs, est connue et l’objectif est alors de calculer les trajectoires des points dans l’espace d’états (la fonction <span class="math inline">\(x\)</span> est l’inconnue). Il s’agit de faire de la prédiction à partir de conditions initiales. Se posent alors les questions de l’existence, d’unicité ou de stabilité des trajectoires. En apprentissage, la configuration est typiquement inversée : on considère un ensemble de points d’apprentissage et on souhaite estimer une fonction <span class="math inline">\(f\)</span> qui prédit au mieux les observations.</p>
+<p>Dans le cas où la fonction inconnue <span class="math inline">\(x\)</span> dépend de plusieurs variables (comme le temps et les coordonnées spatiales), on parlera d’équation différentielle partielle (EDP). C’est le cas lorsque l’on souhaite modéliser un système qui varie à la fois dans le temps et dans l’espace. L’état du système <span class="math inline">\(x_t\)</span> est alors une fonction définie sur le domaine spatial. L’ensemble de toutes les fonctions possibles est appelé espace fonctionnel. Une EDP décrit alors l’évolution d’un système dynamique en dimension infinie.</p>
 <p>Transport optimal : la carte de transport optimal est le gradient d’une fonction convexe.</p>
 <p>Descente de gradient : EDO et flot de gradient.</p>
+
 
 
 
