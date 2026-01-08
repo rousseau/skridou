@@ -10,9 +10,12 @@ Si l'opérateur d'évolution ne dépend que du temps, on peut écrire :
 $$
 \dot{x}_t = f(t, x_t)
 $$
-qui est une équation différentielle ordinaire (EDO) du premier ordre. L'EDO définit la trajectoire d'un point dans un espace d'états de dimension finie. 
+qui est une équation différentielle^[Les équations différentielles apparaissent avec l'invention du calcul infinitésimal par Isaac Newton et Gottfried Leibniz.] ordinaire (EDO) du premier ordre. L'EDO définit la trajectoire d'un point dans un espace d'états de dimension finie. 
 
-Dans le cas où la fonction inconnue dépend de plusieurs variables (comme le temps et les coordonnées spatiales), on parlera d'équation différentielle partielle (EDP). C'est le cas lorsque l'on souhaite modéliser un système qui varie à la fois dans le temps et dans l'espace. L'état du système $x(t)$ est alors une fonction définie sur le domaine spatial. L'ensemble de toutes les fonctions possibles est appelé espace fonctionnel. Une EDP décrit alors l'évolution d'un système dynamique en dimension infinie.  
+Habituellement, on considère que la fonction $f$, appelée champ de vecteurs, est connue et l'objectif est alors de calculer les trajectoires des points dans l'espace d'états (la fonction $x$ est l'inconnue). Il s'agit de faire de la prédiction à partir de conditions initiales. Se posent alors les questions de l'existence, d'unicité ou de stabilité des trajectoires. En apprentissage, la configuration est typiquement inversée : on considère un ensemble de points d'apprentissage et on souhaite estimer une fonction $f$ qui prédit au mieux les observations.
+
+
+Dans le cas où la fonction inconnue $x$ dépend de plusieurs variables (comme le temps et les coordonnées spatiales), on parlera d'équation différentielle partielle (EDP). C'est le cas lorsque l'on souhaite modéliser un système qui varie à la fois dans le temps et dans l'espace. L'état du système $x_t$ est alors une fonction définie sur le domaine spatial. L'ensemble de toutes les fonctions possibles est appelé espace fonctionnel. Une EDP décrit alors l'évolution d'un système dynamique en dimension infinie.  
 
 Transport optimal : la carte de transport optimal est le gradient d'une fonction convexe.
 
