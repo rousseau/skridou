@@ -6,6 +6,8 @@ Un système dynamique est une formalisation mathématique permettant de décrire
 2. $T$ : l'ensemble de temps,
 3. $\phi_t$ : l'opérateur d'évolution (appelé flot pour les systèmes à temps continu) qui transforme un état initial $x_0$ en l'état $x_t$ à l'instant $t$.
 
+## Équations différentielles
+
 Si l'opérateur d'évolution ne dépend que du temps, on peut écrire : 
 $$
 \dot{x}_t = f(t, x_t)
@@ -19,6 +21,29 @@ Dans le cas où la fonction inconnue $x$ dépend de plusieurs variables (comme l
 
 Transport optimal : la carte de transport optimal est le gradient d'une fonction convexe.
 
-Descente de gradient : EDO et flot de gradient.
+## Flot de gradient
 
+Un flot de gradient est un système dynamique dissipatif défini par une EDO de la forme $\dot{x}_t = -\nabla V(x_t)$. La trajectoire suit alors la direction de la plus forte pente descendante de la fonction potentielle $V$ (qui est une fonction de Lyapunov). La discrétisation numérique via un schéma d'Euler explicite correspond à l'algorithme de descente de gradient.  
+
+## Évolution d'une densité
+
+L'évolution d'une densité de probabilité $\rho_t$ transportée par un champ de vecteurs $v_t$ est décrite par l'équation de continuité (EDP) : 
+$$
+\frac{\partial \rho_t}{\partial t} + \operatorname{div} (\rho_t v_t) = 0 \ .
+$$
+Dans le cadre du transport optimal, la formule de Benamou-Brenier montre que le chemin le plus court entre deux densités est celui qui minimise l'énergie cinétique totale tout en satisfaisant cette EDP.
+
+## Flot de gradient de Wasserstein
+
+Si on souhaite étendre la notion de flot de gradient (définie pour un point) à une densité de probabilité $\rho_t$, on obtient le flot de gradient de Wasserstein. Dans ce contexte, on cherche l'évolution de $\rho_t$ qui va minimiser une fonctionnelle d'énergie $F[\rho]$, c'st à dire le champ de vitesse suivant : 
+$$
+v_t = - \nabla \left( \frac{\delta F[\rho_t]}{\delta \rho} \right) \ .
+$$
+En considérant la contrainte de l'équation de continuité, on obtient l'EDP suivante :
+$$
+\frac{\partial \rho_t}{\partial t} = \operatorname{div} \left(\rho_t \nabla \left( \frac{\delta F[\rho_t]}{\delta \rho} \right)\right)
+$$
+
+## Flow matching
+Le Flow Matching s'inscrit dans une perspective lagrangienne du transport de densité en s'intéressant au flot qui déplace chaque particule dont l'évolution est décrite par une EDO.  
 
