@@ -34,7 +34,57 @@
     "href": "sysdyn.html",
     "title": "3  Systèmes dynamiques",
     "section": "",
-    "text": "Un système dynamique est une formalisation mathématique permettant de décrire l’évolution de l’état d’un système dans le temps. Les trois composantes fondamentales sont :\n\n\\(X\\) : l’espace d’états, c’est-à-dire l’ensemble de tous les états possibles du système (également appelé espace de phase),\n\\(T\\) : l’ensemble de temps,\n\\(\\phi_t\\) : l’opérateur d’évolution (appelé flot pour les systèmes à temps continu) qui transforme un état initial \\(x_0\\) en l’état \\(x_t\\) à l’instant \\(t\\).\n\nSi l’opérateur d’évolution ne dépend que du temps, on peut écrire : \\[\n\\dot{x}_t = f(t, x_t)\n\\] qui est une équation différentielle1 ordinaire (EDO) du premier ordre. L’EDO définit la trajectoire d’un point dans un espace d’états de dimension finie.\n1 Les équations différentielles apparaissent avec l’invention du calcul infinitésimal par Isaac Newton et Gottfried Leibniz.Habituellement, on considère que la fonction \\(f\\), appelée champ de vecteurs, est connue et l’objectif est alors de calculer les trajectoires des points dans l’espace d’états (la fonction \\(x\\) est l’inconnue). Il s’agit de faire de la prédiction à partir de conditions initiales. Se posent alors les questions de l’existence, d’unicité ou de stabilité des trajectoires. En apprentissage, la configuration est typiquement inversée : on considère un ensemble de points d’apprentissage et on souhaite estimer une fonction \\(f\\) qui prédit au mieux les observations.\nDans le cas où la fonction inconnue \\(x\\) dépend de plusieurs variables (comme le temps et les coordonnées spatiales), on parlera d’équation différentielle partielle (EDP). C’est le cas lorsque l’on souhaite modéliser un système qui varie à la fois dans le temps et dans l’espace. L’état du système \\(x_t\\) est alors une fonction définie sur le domaine spatial. L’ensemble de toutes les fonctions possibles est appelé espace fonctionnel. Une EDP décrit alors l’évolution d’un système dynamique en dimension infinie.\nTransport optimal : la carte de transport optimal est le gradient d’une fonction convexe.\nDescente de gradient : EDO et flot de gradient.",
+    "text": "3.1 Équations différentielles\nUn système dynamique est une formalisation mathématique permettant de décrire l’évolution de l’état d’un système dans le temps. Les trois composantes fondamentales sont :\nSi l’opérateur d’évolution ne dépend que du temps, on peut écrire : \\[\n\\dot{x}_t = f(t, x_t)\n\\] qui est une équation différentielle1 ordinaire (EDO) du premier ordre. L’EDO définit la trajectoire d’un point dans un espace d’états de dimension finie.\nHabituellement, on considère que la fonction \\(f\\), appelée champ de vecteurs, est connue et l’objectif est alors de calculer les trajectoires des points dans l’espace d’états (la fonction \\(x\\) est l’inconnue). Il s’agit de faire de la prédiction à partir de conditions initiales. Se posent alors les questions de l’existence, d’unicité ou de stabilité des trajectoires. En apprentissage, la configuration est typiquement inversée : on considère un ensemble de points d’apprentissage et on souhaite estimer une fonction \\(f\\) qui prédit au mieux les observations.\nDans le cas où la fonction inconnue \\(x\\) dépend de plusieurs variables (comme le temps et les coordonnées spatiales), on parlera d’équation différentielle partielle (EDP). C’est le cas lorsque l’on souhaite modéliser un système qui varie à la fois dans le temps et dans l’espace. L’état du système \\(x_t\\) est alors une fonction définie sur le domaine spatial. L’ensemble de toutes les fonctions possibles est appelé espace fonctionnel. Une EDP décrit alors l’évolution d’un système dynamique en dimension infinie.\nTransport optimal : la carte de transport optimal est le gradient d’une fonction convexe.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Systèmes dynamiques</span>"
+    ]
+  },
+  {
+    "objectID": "sysdyn.html#équations-différentielles",
+    "href": "sysdyn.html#équations-différentielles",
+    "title": "3  Systèmes dynamiques",
+    "section": "",
+    "text": "1 Les équations différentielles apparaissent avec l’invention du calcul infinitésimal par Isaac Newton et Gottfried Leibniz.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Systèmes dynamiques</span>"
+    ]
+  },
+  {
+    "objectID": "sysdyn.html#flot-de-gradient",
+    "href": "sysdyn.html#flot-de-gradient",
+    "title": "3  Systèmes dynamiques",
+    "section": "3.2 Flot de gradient",
+    "text": "3.2 Flot de gradient\nUn flot de gradient est un système dynamique dissipatif défini par une EDO de la forme \\(\\dot{x}_t = -\\nabla V(x_t)\\). La trajectoire suit alors la direction de la plus forte pente descendante de la fonction potentielle \\(V\\) (qui est une fonction de Lyapunov). La discrétisation numérique via un schéma d’Euler explicite correspond à l’algorithme de descente de gradient.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Systèmes dynamiques</span>"
+    ]
+  },
+  {
+    "objectID": "sysdyn.html#évolution-dune-densité",
+    "href": "sysdyn.html#évolution-dune-densité",
+    "title": "3  Systèmes dynamiques",
+    "section": "3.3 Évolution d’une densité",
+    "text": "3.3 Évolution d’une densité\nL’évolution d’une densité de probabilité \\(\\rho_t\\) transportée par un champ de vecteurs \\(v_t\\) est décrite par l’équation de continuité (EDP) : \\[\n\\frac{\\partial \\rho_t}{\\partial t} + \\operatorname{div} (\\rho_t v_t) = 0 \\ .\n\\] Dans le cadre du transport optimal, la formule de Benamou-Brenier montre que le chemin le plus court entre deux densités est celui qui minimise l’énergie cinétique totale tout en satisfaisant cette EDP.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Systèmes dynamiques</span>"
+    ]
+  },
+  {
+    "objectID": "sysdyn.html#flot-de-gradient-de-wasserstein",
+    "href": "sysdyn.html#flot-de-gradient-de-wasserstein",
+    "title": "3  Systèmes dynamiques",
+    "section": "3.4 Flot de gradient de Wasserstein",
+    "text": "3.4 Flot de gradient de Wasserstein\nSi on souhaite étendre la notion de flot de gradient (définie pour un point) à une densité de probabilité \\(\\rho_t\\), on obtient le flot de gradient de Wasserstein. Dans ce contexte, on cherche l’évolution de \\(\\rho_t\\) qui va minimiser une fonctionnelle d’énergie \\(F[\\rho]\\), c’st à dire le champ de vitesse suivant : \\[\nv_t = - \\nabla \\left( \\frac{\\delta F[\\rho_t]}{\\delta \\rho} \\right) \\ .\n\\] En considérant la contrainte de l’équation de continuité, on obtient l’EDP suivante : \\[\n\\frac{\\partial \\rho_t}{\\partial t} = \\operatorname{div} \\left(\\rho_t \\nabla \\left( \\frac{\\delta F[\\rho_t]}{\\delta \\rho} \\right)\\right)\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Systèmes dynamiques</span>"
+    ]
+  },
+  {
+    "objectID": "sysdyn.html#flow-matching",
+    "href": "sysdyn.html#flow-matching",
+    "title": "3  Systèmes dynamiques",
+    "section": "3.5 Flow matching",
+    "text": "3.5 Flow matching\nLe Flow Matching s’inscrit dans une perspective lagrangienne du transport de densité en s’intéressant au flot qui déplace chaque particule dont l’évolution est décrite par une EDO.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Systèmes dynamiques</span>"
     ]

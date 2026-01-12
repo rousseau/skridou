@@ -172,8 +172,18 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#équations-différentielles" id="toc-équations-différentielles" class="nav-link active" data-scroll-target="#équations-différentielles"><span class="header-section-number">3.1</span> Équations différentielles</a></li>
+  <li><a href="#flot-de-gradient" id="toc-flot-de-gradient" class="nav-link" data-scroll-target="#flot-de-gradient"><span class="header-section-number">3.2</span> Flot de gradient</a></li>
+  <li><a href="#évolution-dune-densité" id="toc-évolution-dune-densité" class="nav-link" data-scroll-target="#évolution-dune-densité"><span class="header-section-number">3.3</span> Évolution d’une densité</a></li>
+  <li><a href="#flot-de-gradient-de-wasserstein" id="toc-flot-de-gradient-de-wasserstein" class="nav-link" data-scroll-target="#flot-de-gradient-de-wasserstein"><span class="header-section-number">3.4</span> Flot de gradient de Wasserstein</a></li>
+  <li><a href="#flow-matching" id="toc-flow-matching" class="nav-link" data-scroll-target="#flow-matching"><span class="header-section-number">3.5</span> Flow matching</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -203,15 +213,39 @@ window.Quarto = {
 <li><span class="math inline">\(T\)</span> : l’ensemble de temps,</li>
 <li><span class="math inline">\(\phi_t\)</span> : l’opérateur d’évolution (appelé flot pour les systèmes à temps continu) qui transforme un état initial <span class="math inline">\(x_0\)</span> en l’état <span class="math inline">\(x_t\)</span> à l’instant <span class="math inline">\(t\)</span>.</li>
 </ol>
+<section id="équations-différentielles" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="équations-différentielles"><span class="header-section-number">3.1</span> Équations différentielles</h2>
 <p>Si l’opérateur d’évolution ne dépend que du temps, on peut écrire : <span class="math display">\[
 \dot{x}_t = f(t, x_t)
 \]</span> qui est une équation différentielle<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> ordinaire (EDO) du premier ordre. L’EDO définit la trajectoire d’un point dans un espace d’états de dimension finie.</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Les équations différentielles apparaissent avec l’invention du calcul infinitésimal par Isaac Newton et Gottfried Leibniz.</p></div></div><p>Habituellement, on considère que la fonction <span class="math inline">\(f\)</span>, appelée champ de vecteurs, est connue et l’objectif est alors de calculer les trajectoires des points dans l’espace d’états (la fonction <span class="math inline">\(x\)</span> est l’inconnue). Il s’agit de faire de la prédiction à partir de conditions initiales. Se posent alors les questions de l’existence, d’unicité ou de stabilité des trajectoires. En apprentissage, la configuration est typiquement inversée : on considère un ensemble de points d’apprentissage et on souhaite estimer une fonction <span class="math inline">\(f\)</span> qui prédit au mieux les observations.</p>
 <p>Dans le cas où la fonction inconnue <span class="math inline">\(x\)</span> dépend de plusieurs variables (comme le temps et les coordonnées spatiales), on parlera d’équation différentielle partielle (EDP). C’est le cas lorsque l’on souhaite modéliser un système qui varie à la fois dans le temps et dans l’espace. L’état du système <span class="math inline">\(x_t\)</span> est alors une fonction définie sur le domaine spatial. L’ensemble de toutes les fonctions possibles est appelé espace fonctionnel. Une EDP décrit alors l’évolution d’un système dynamique en dimension infinie.</p>
 <p>Transport optimal : la carte de transport optimal est le gradient d’une fonction convexe.</p>
-<p>Descente de gradient : EDO et flot de gradient.</p>
+</section>
+<section id="flot-de-gradient" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="flot-de-gradient"><span class="header-section-number">3.2</span> Flot de gradient</h2>
+<p>Un flot de gradient est un système dynamique dissipatif défini par une EDO de la forme <span class="math inline">\(\dot{x}_t = -\nabla V(x_t)\)</span>. La trajectoire suit alors la direction de la plus forte pente descendante de la fonction potentielle <span class="math inline">\(V\)</span> (qui est une fonction de Lyapunov). La discrétisation numérique via un schéma d’Euler explicite correspond à l’algorithme de descente de gradient.</p>
+</section>
+<section id="évolution-dune-densité" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="évolution-dune-densité"><span class="header-section-number">3.3</span> Évolution d’une densité</h2>
+<p>L’évolution d’une densité de probabilité <span class="math inline">\(\rho_t\)</span> transportée par un champ de vecteurs <span class="math inline">\(v_t\)</span> est décrite par l’équation de continuité (EDP) : <span class="math display">\[
+\frac{\partial \rho_t}{\partial t} + \operatorname{div} (\rho_t v_t) = 0 \ .
+\]</span> Dans le cadre du transport optimal, la formule de Benamou-Brenier montre que le chemin le plus court entre deux densités est celui qui minimise l’énergie cinétique totale tout en satisfaisant cette EDP.</p>
+</section>
+<section id="flot-de-gradient-de-wasserstein" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="flot-de-gradient-de-wasserstein"><span class="header-section-number">3.4</span> Flot de gradient de Wasserstein</h2>
+<p>Si on souhaite étendre la notion de flot de gradient (définie pour un point) à une densité de probabilité <span class="math inline">\(\rho_t\)</span>, on obtient le flot de gradient de Wasserstein. Dans ce contexte, on cherche l’évolution de <span class="math inline">\(\rho_t\)</span> qui va minimiser une fonctionnelle d’énergie <span class="math inline">\(F[\rho]\)</span>, c’st à dire le champ de vitesse suivant : <span class="math display">\[
+v_t = - \nabla \left( \frac{\delta F[\rho_t]}{\delta \rho} \right) \ .
+\]</span> En considérant la contrainte de l’équation de continuité, on obtient l’EDP suivante : <span class="math display">\[
+\frac{\partial \rho_t}{\partial t} = \operatorname{div} \left(\rho_t \nabla \left( \frac{\delta F[\rho_t]}{\delta \rho} \right)\right)
+\]</span></p>
+</section>
+<section id="flow-matching" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="flow-matching"><span class="header-section-number">3.5</span> Flow matching</h2>
+<p>Le Flow Matching s’inscrit dans une perspective lagrangienne du transport de densité en s’intéressant au flot qui déplace chaque particule dont l’évolution est décrite par une EDO.</p>
 
 
+</section>
 
 
 </main> <!-- /main -->
