@@ -41,8 +41,28 @@ v_t = - \nabla \left( \frac{\delta F[\rho_t]}{\delta \rho} \right) \ .
 $$
 En considérant la contrainte de l'équation de continuité, on obtient l'EDP suivante :
 $$
-\frac{\partial \rho_t}{\partial t} = \operatorname{div} \left(\rho_t \nabla \left( \frac{\delta F[\rho_t]}{\delta \rho} \right)\right)
+\frac{\partial \rho_t}{\partial t} = \operatorname{div} \left(\rho_t \nabla \left( \frac{\delta F[\rho_t]}{\delta \rho} \right)\right) \ .
 $$
+
+**Exemple** : On peut par exemple choisir pour $F(\rho)$ l'intégrale de l'entropie de Boltzmann-Shannon : 
+$$
+F(\rho) = \int_{\mathbb{R}^d} U(\rho(x))dx
+$$
+avec $U(s) = s \ln(s)$. La variation première (notée $\frac{\delta F}{\delta \rho}$) est égale à la dérivée de la fonction de densité $U$ : 
+$$
+\frac{\delta F}{\delta \rho} = U'(\rho) = \ln(\rho) + 1 \ .
+$$
+On calcule ensuite le gradient de ce potentiel dans l'espace physique $\mathbb{R}^d$ : 
+$$
+\nabla \left( \frac{\delta F}{\delta \rho} \right) = \nabla(\ln \rho + 1) = \frac{\nabla \rho}{\rho} \ . 
+$$
+Ce terme représente la vitesse à laquelle les particules se déplacent pour minimiser l'entropie. Injecté dans l'équation de continuité, on obtient l'équation de la chaleur : 
+$$
+\frac{\partial \rho_t}{\partial t} = \operatorname{div} (\nabla \rho) = \Delta \rho \ .
+$$
+La diffusion de la chaleur correspond donc à une descente de gradient de l'entropie dans l'espace de Wasserstein. Le flux de chaleur est donc le chemin le plus court (géodésique) pour dissiper l'énergie libre. 
+
+Comme cette EDP est souvent difficile à résoudre directement, on utilise en pratique le schéma de Jordan-Kinderlehrer-Otto (JKO).
 
 ## Flow matching
 Le Flow Matching s'inscrit dans une perspective lagrangienne du transport de densité en s'intéressant au flot qui déplace chaque particule dont l'évolution est décrite par une EDO.  
