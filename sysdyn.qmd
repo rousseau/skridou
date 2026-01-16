@@ -60,9 +60,12 @@ Ce terme représente la vitesse à laquelle les particules se déplacent pour mi
 $$
 \frac{\partial \rho_t}{\partial t} = \operatorname{div} (\nabla \rho) = \Delta \rho \ .
 $$
-La diffusion de la chaleur correspond donc à une descente de gradient de l'entropie dans l'espace de Wasserstein. Le flux de chaleur est donc le chemin le plus court (géodésique) pour dissiper l'énergie libre. 
+La diffusion de la chaleur correspond donc à une descente de gradient de l'entropie dans l'espace de Wasserstein. Le flux de chaleur est donc le chemin le plus court (géodésique) pour dissiper l'énergie libre^[Ce résultat a été démontré par Richard Jordan, David Kinderlehrer et Felix Otto dans l'article intitulé « The variational formulation of the Fokker-Planck equation », publié en 1998.]. 
 
-Comme cette EDP est souvent difficile à résoudre directement, on utilise en pratique le schéma de Jordan-Kinderlehrer-Otto (JKO).
+ L'EDP de flot de gradient de Wasserstein est souvent difficile à résoudre directement, on utilise en pratique le schéma de Jordan-Kinderlehrer-Otto (JKO), qui est l'analogue de la discrétisation par schéma d'Euler implicite pour les flots de gradient classiques. On construit donc une suite de densité $(\rho_k)$ pour des pas de temps discrets. À chaque étape $k$, connaissant la densité précédente $\rho_{k−1}$​, la nouvelle densité $\rho_k$​ est obtenue en résolvant le problème de minimisation variationnelle suivant :
+ $$
+ \rho_k = \arg \min_\rho \left( F(\rho) + \frac{1}{2\tau}W^2_2(\rho,\rho_{k-1}) \right) \ .
+ $$
 
 ## Flow matching
 Le Flow Matching s'inscrit dans une perspective lagrangienne du transport de densité en s'intéressant au flot qui déplace chaque particule dont l'évolution est décrite par une EDO.  
